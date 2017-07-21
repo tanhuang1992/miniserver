@@ -30,10 +30,10 @@ public:
     {
       return 1;
     }
-	if (m_buf_len < sizeof(lenth))
-	{
-		return 2;
-	}
+    if (m_buf_len < sizeof(lenth))
+    {
+      return 2;
+    }
     memcpy(&lenth, m_mem, sizeof(lenth));
     if (lenth == 0)
     {
@@ -46,9 +46,9 @@ public:
     
     total_len = sizeof(int) + lenth;
     m_mem = m_mem + total_len;
-	m_buf_len -= total_len;
+    m_buf_len -= total_len;
 
-	return 0;
+    return 0;
   }
 
   inline int write(const char* data, unsigned int lenth)
@@ -72,22 +72,22 @@ public:
     m_mem += lenth;
     m_buf_len += total_len;
 
-	return 0;
+    return 0;
   }
 
   inline unsigned int get_len()
   {
-	  return m_buf_len;
+    return m_buf_len;
   }
 
   inline unsigned int get_size()
   {
-	  return m_mem_size;
+    return m_mem_size;
   }
 
   inline char* get_mem()
   {
-	  return m_mem;
+    return m_mem;
   }
 
 protected:
